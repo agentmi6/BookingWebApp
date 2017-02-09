@@ -1,6 +1,8 @@
 package com.websystique.springsecurity.controller;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -90,6 +92,12 @@ public class HelloWorldController {
 			System.out.println("There are errors");
 			return "newuser";
 		}
+
+		// Set default UserProfle as USER
+		Set<UserProfile> userProfiles = new HashSet<UserProfile>();
+		UserProfile userProfile = userProfileService.findByType("USER");
+		userProfiles.add(userProfile);
+		user.setUserProfiles(userProfiles);
 
 		try {
 			userService.save(user);

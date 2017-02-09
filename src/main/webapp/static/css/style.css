@@ -33,8 +33,11 @@ body {
 
 
 .actionLinks{
-	margin:0px 5px 0px 5px;
-		
+	margin:0px 5px 0px 5px;		
+}
+
+.actionLinks:hover {
+	text-decoration:none;
 }
 
 .glyphsBg {
@@ -50,7 +53,7 @@ body {
 }
 
 .addBtn {
-	
+	margin-bottom:20px;
 }
 
 .wElements {

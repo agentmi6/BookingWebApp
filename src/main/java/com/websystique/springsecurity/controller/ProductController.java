@@ -5,7 +5,6 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,7 +32,6 @@ public class ProductController {
 	@Autowired
 	private UserService userService;
 
-	@Secured(value = { "USER", "ADMIN", "DBA" })
 	@GetMapping("/products")
 	public String getProductList(Model model) {
 
@@ -49,10 +47,9 @@ public class ProductController {
 		model.addAttribute("products", products);
 		model.addAttribute("currentUser", getPrincipal());
 
-		return "products";
+		return "product-list";
 	}
 
-	@Secured(value = { "USER", "ADMIN", "DBA" })
 	@GetMapping("/addProduct")
 	public String addProduct(Model model) {
 

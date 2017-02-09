@@ -38,33 +38,32 @@
 
 	<div class="container pageContent">
 
-		<h3 class="pageHeader">Add new product</h3>
+		<h3 class="pageHeader">Add new room</h3>
 		
 		<div class="col-md-10">
-			<form:form action="saveProduct" modelAttribute="product" method="POST">
+			<form:form action="saveRoom" modelAttribute="room" method="POST">
 
-				<form:hidden path="productId" />
+				<form:hidden path="roomId" />
 
-				<div class="form-group col-md-8">
-					<label for="productName">Product Name</label>
+				<%-- <div class="form-group col-md-8">
+					<label for="productName">Room Name</label>
 					<form:input type="text" path="productName" id="productName"
 						class="form-control" placeholder="Enter product name" />
 					<form:errors path="productName" class="text-danger"></form:errors>
-				</div>
-
+				</div> --%>
+				
+				
 				<div class="form-group col-md-8">
-					<label for="productSN">Product Serial Number</label>
-					<form:input type="text" path="productSN" id="productSN"
-						class="form-control" placeholder="Enter product serial number" />
-					<form:errors path="productSN" class="text-danger"></form:errors>
-
+					<label for="roomType1">Room Type</label> 
+					<form:select path="roomType.roomTypeId" class="form-control" id="roomType1">
+						<c:forEach var="rType" items="${roomTypes}">
+							<form:option value="${rType.roomTypeId}">
+								${rType.roomTypeName}
+							</form:option>
+						</c:forEach>							
+					</form:select>
 				</div>
-
-				<div class="form-group col-md-8" hidden="true">
-					<label for="productUser">Created by</label>
-					<form:input type="text" path="user.id" id="productUser"
-						class="form-control" value="${currentUserId}" />
-				</div>
+			
 
 
 				<div class="col-md-10">

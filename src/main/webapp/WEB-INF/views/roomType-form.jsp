@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -33,47 +33,34 @@
 </head>
 <body>	
 
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="header.jsp" />
 
-
+	
 	<div class="container pageContent">
-
-		<h3 class="pageHeader">Add new product</h3>
+		<h3 class="pageHeader">Add new room type</h3>				
 		
 		<div class="col-md-10">
-			<form:form action="saveProduct" modelAttribute="product" method="POST">
-
-				<form:hidden path="productId" />
-
-				<div class="form-group col-md-8">
-					<label for="productName">Product Name</label>
-					<form:input type="text" path="productName" id="productName"
-						class="form-control" placeholder="Enter product name" />
-					<form:errors path="productName" class="text-danger"></form:errors>
-				</div>
-
-				<div class="form-group col-md-8">
-					<label for="productSN">Product Serial Number</label>
-					<form:input type="text" path="productSN" id="productSN"
-						class="form-control" placeholder="Enter product serial number" />
-					<form:errors path="productSN" class="text-danger"></form:errors>
-
-				</div>
-
-				<div class="form-group col-md-8" hidden="true">
-					<label for="productUser">Created by</label>
-					<form:input type="text" path="user.id" id="productUser"
-						class="form-control" value="${currentUserId}" />
-				</div>
-
-
-				<div class="col-md-10">
-					<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save</button>
-				</div>
-			</form:form>
-		</div>
+				<form:form action="saveRoomType" modelAttribute="roomType" method="POST">
+		
+					<form:hidden path="roomTypeId" />
+					
+					<div class="form-group col-md-8">
+						<label for="roomTypeName1">Room Type Name:</label> 
+						<form:input type="text" path="roomTypeName" id="roomTypeName1" class="form-control"  placeholder="Enter room type name "/> 
+					</div>		
+					<div class="form-group col-md-8">
+						<label for="roomTypePrice1">Room Type Price:</label> 
+						<form:input type="text" path="roomTypePrice" id="roomTypePrice1" class="form-control"  placeholder="Enter room type price "/> 
+					</div>	
+					
+					<div class="col-md-10">
+						<button type="submit" class="btn btn-primary" style="margin-top:10px;">Save</button>					
+					</div>	
+				</form:form>
+		</div>	
 	</div>
 
 
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

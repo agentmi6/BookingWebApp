@@ -90,14 +90,14 @@
 				</div>
 			</div>
 
-			<div class="form-group col-md-8">
+		<%-- 	<div class="form-group col-md-8">
 				<label for="userProfiles">Roles</label>
 				<form:select path="userProfiles" items="${roles}" multiple="true"
 					itemValue="id" itemLabel="type" class="form-control input-sm" />
 				<div class="has-error">
 					<form:errors path="userProfiles" class="help-inline text-danger" />
 				</div>
-			</div>
+			</div> --%>
 
 			<div class="row col-md-12">
 				<div class="form-actions floatRight">

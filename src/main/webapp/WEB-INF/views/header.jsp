@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>			
+
 
 <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -12,7 +14,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="${pageContext.request.contextPath}\p\products">Products</a></li>                                                
+                    <li><a href="${pageContext.request.contextPath}\p\products">Products</a></li> 
+				<sec:authorize access="hasRole('ADMIN')"> 
+                    <li><a href="${pageContext.request.contextPath}\roomType\roomTypes">RoomTypes</a></li>
+                    <li><a href="${pageContext.request.contextPath}\room\rooms">Rooms</a></li>
+				</sec:authorize>                                                                    
                 </ul>
 			<ul class="nav navbar-nav navbar-right">
 				<c:choose>

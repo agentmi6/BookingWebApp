@@ -50,7 +50,7 @@ public class User {
 	@Column(name = "STATE", nullable = true)
 	private String state = State.ACTIVE.getState();
 
-	@NotEmpty(message = "You must pick role(s)")
+	/* @NotEmpty(message = "You must pick role(s)") */
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "APP_USER_USER_PROFILE", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
 			@JoinColumn(name = "USER_PROFILE_ID") })
