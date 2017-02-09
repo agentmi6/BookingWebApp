@@ -40,7 +40,7 @@ public class ProductController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		UserDetails userDetail = (UserDetails) auth.getPrincipal();
 
-		User user = userService.findBySso(userDetail.getUsername());
+		User user = userService.findByUsername(userDetail.getUsername());
 		int currentUserId = user.getId();
 
 		model.addAttribute("currentUserId", currentUserId);
@@ -59,7 +59,7 @@ public class ProductController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		UserDetails userDetail = (UserDetails) auth.getPrincipal();
 
-		User user = userService.findBySso(userDetail.getUsername());
+		User user = userService.findByUsername(userDetail.getUsername());
 		int currentUserId = user.getId();
 
 		model.addAttribute("currentUserId", currentUserId);

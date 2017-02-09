@@ -62,10 +62,10 @@
 			</div>
 
 			<div class="form-group col-md-8">
-				<label for="ssoId">SSO ID</label>
-				<form:input type="text" path="ssoId" id="ssoId"	class="form-control input-sm" />
+				<label for="username">Username</label>
+				<form:input type="text" path="username" id="username"	class="form-control input-sm" />
 				<div class="has-error">
-					<form:errors path="ssoId" class="help-inline text-danger" />
+					<form:errors path="username" class="help-inline text-danger" />
 					<c:choose>
 						<c:when test="${exception != null}">
 							<span class="help-inline text-danger">${checkUserName}</span>

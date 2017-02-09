@@ -6,7 +6,7 @@ public interface UserService {
 
 	User findById(int id);
 
-	User findBySso(String sso);
+	User findByUsername(String username);
 
 	void save(User user);
 

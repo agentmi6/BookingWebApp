@@ -60,10 +60,10 @@
 						</c:if>
 					
 						<div class="input-group input-sm">
-							<label class="input-group-addon glyphsBg" for="username">
+							<label class="input-group-addon glyphsBg" for="username1">
 								<span class="glyphicon glyphicon-user"></span>
 							</label> 
-							<form:input type="text" class="form-control" id="username" path="ssoId" placeholder="Enter Username" required="true"></form:input>
+							<form:input type="text" class="form-control" id="username1" path="username" placeholder="Enter Username" required="true"></form:input>
 						</div>
 					
 						<div class="input-group input-sm">

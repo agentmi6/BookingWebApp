@@ -23,28 +23,33 @@
 
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet"></link>
     
-    
+    <!-- color code #225849 -->
 </head>
 <body>
-   <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title text-success" id="myModalLabel">Registration successful!</h4>
-      </div>
-      <div class="modal-body">
-        <p>${user}, Thank you for registering! You can log in now.</p>
-        <br/>
-        <p><a href="${pageContext.request.contextPath}\login">Go to login page</a>
-         
-      </div>
-      <div class="modal-footer">
-        <a href="${pageContext.request.contextPath}\" class="btn btn-default">Close</a>
-      </div>
-    </div>
-  </div>
-</div>
-     <script type="text/javascript">
+	<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title text-center" id="myModalLabel" style="font-weight: 600;">Booking WebApp</h3>
+				</div>
+				<div class="modal-body">
+					<h1 class="text-center" style="margin-top: 0px; margin-bottom: 0px; color: #eee9e9; font-weight: 900;">
+						REGISTRATION SUCCESSFUL
+					</h1>
+				</div>
+				<div class="modal-footer m-footer">
+					<p style="text-align: left; display: inline-block;">
+						<span>${user}, </span>You can <a href="${pageContext.request.contextPath}/login">log in</a> now
+					</p>
+					<a href="/SpringSecurityHibernateAnnotationExample\"
+						class="btn btn-default pull-right" style="text-align: right;">Close</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
        $(document).ready(function(){    	     		
          	$('#myModal').modal('show');    	
        });

@@ -69,4 +69,18 @@ body {
 	margin-right:10px;
 }
 
+.m-footer {
+	text-align: -webkit-auto;
+}
+
+.modal-body {
+	background-color: #225849;
+}
+.modal-content {
+	background-color: #efefef;
+	border: 4px solid #225849;
+}
+
+
+
 
