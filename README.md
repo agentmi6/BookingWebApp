@@ -2,6 +2,8 @@
 
 # set as default schema
 
+# run the project from eclipse so the tables can be created in db
+
 # Execute in sql script file in workbench #
 ###########################################
 
