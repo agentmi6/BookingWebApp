@@ -1,5 +1,7 @@
 package com.websystique.springsecurity.dao;
 
+import java.util.List;
+
 import com.websystique.springsecurity.model.User;
 
 public interface UserDao {
@@ -9,4 +11,7 @@ public interface UserDao {
 	User findByUsername(String username);
 
 	public void save(User user);
+
+	public List<User> getAllUsers();
+
 }

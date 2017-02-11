@@ -13,8 +13,7 @@
                 <a href="${pageContext.request.contextPath}\" class="navbar-brand">Web Application</a>            
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="${pageContext.request.contextPath}\p\products">Products</a></li> 
+                <ul class="nav navbar-nav">                    
 				<sec:authorize access="hasRole('ADMIN')"> 
                     <li><a href="${pageContext.request.contextPath}\roomType\roomTypes">RoomTypes</a></li>
                     <li><a href="${pageContext.request.contextPath}\room\rooms">Rooms</a></li>

@@ -81,6 +81,21 @@ body {
 	border: 4px solid #225849;
 }
 
+.roomTable {
+	padding-bottom:50px;
+	padding-top:50px;
+}
 
+.roomBtn {
+	margin:15px;
+}
 
+.noBookings {
+	padding:90px;
+	text-align:center;
+}
+
+.noBookings a {
+	margin-top:20px;
+}
 

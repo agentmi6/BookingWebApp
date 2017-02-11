@@ -46,11 +46,18 @@
 					
 					<div class="form-group col-md-8">
 						<label for="roomTypeName1">Room Type Name:</label> 
-						<form:input type="text" path="roomTypeName" id="roomTypeName1" class="form-control"  placeholder="Enter room type name "/> 
-					</div>		
+						<form:input type="text" path="roomTypeName" id="roomTypeName1" class="form-control"  placeholder="Enter room type name "/>
+						<div class="has-error">
+							<form:errors path="roomTypeName" class="help-inline text-danger" />
+						</div> 
+					</div>	
+						
 					<div class="form-group col-md-8">
 						<label for="roomTypePrice1">Room Type Price:</label> 
-						<form:input type="text" path="roomTypePrice" id="roomTypePrice1" class="form-control"  placeholder="Enter room type price "/> 
+						<form:input type="text" path="roomTypePrice" id="roomTypePrice1" class="form-control"  placeholder="Enter room type price "/>
+						<div class="has-error">
+							<form:errors path="roomTypePrice" class="help-inline text-danger" />
+						</div> 
 					</div>	
 					
 					<div class="col-md-10">

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -25,12 +26,15 @@ public class RoomType {
 	@Column(name = "room_type_name")
 	private String roomTypeName;
 
-	@NotEmpty(message = "Price is required!!!")
+	@Min(100)
 	@Column(name = "room_type_price")
 	private double roomTypePrice;
 
 	@OneToMany(mappedBy = "roomType")
 	private List<Room> rooms;
+
+	@OneToMany(mappedBy = "roomType")
+	private List<Booking> bookings;
 
 	public int getRoomTypeId() {
 		return roomTypeId;
@@ -62,6 +66,14 @@ public class RoomType {
 
 	public void setRooms(List<Room> rooms) {
 		this.rooms = rooms;
+	}
+
+	public List<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
 	}
 
 }

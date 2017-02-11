@@ -42,10 +42,12 @@
 	<br />
 		<table class="table">
 			<thead>
-				<th>product name</th>
-				<th>product sn</th>
-				<th>product user</th>
-				<th>Actions</th>
+				<tr>
+					<th>product name</th>
+					<th>product sn</th>
+					<th>product user</th>
+					<th>Actions</th>
+				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="product" items="${products}">

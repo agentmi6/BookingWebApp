@@ -72,7 +72,7 @@
 					<h2>Booking</h2>
 					<p>Check our room layout and book a room</p>
 					<p>
-						<a href="#" class="btn btn-primary">Room Layout</a>
+						<a href="${pageContext.request.contextPath}/booking/addBooking" class="btn btn-primary">Room Layout</a>
 					</p>
 				</div>
 
@@ -80,7 +80,7 @@
 					<h2>Profile</h2>
 					<p>Here you can manage your bookings(delete)</p>
 					<p>
-						<a href="#" class="btn btn-primary">My Bookings</a>
+						<a href="${pageContext.request.contextPath}/booking/bookings" class="btn btn-primary">My Bookings</a>
 					</p>
 				</div>
 				

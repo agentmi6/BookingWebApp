@@ -59,6 +59,9 @@ public class User {
 	@OneToMany
 	private List<Product> products;
 
+	@OneToMany
+	private List<Booking> bookings;
+
 	public int getId() {
 		return id;
 	}
@@ -129,6 +132,14 @@ public class User {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+	public List<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
 	}
 
 	@Override
