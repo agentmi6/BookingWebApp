@@ -196,7 +196,7 @@
 
 					<!-- booking to be made by the current logged in user ...-->
 					
-					<div class="form-group col-md-8">
+					<div class="form-group col-md-8 userInput">
 						<label for="currentUser">Booking with username:</label>
 						<form:input type="text" path="user.id" id="currentUser" class="form-control" readonly="true" value="${currentUserId}"/>
 					</div>				
@@ -250,7 +250,7 @@
 			    var roomPrice = $(this).attr("class")
 			    var room_price = $(this).attr("data-price");
 			    /*var room_price = parseInt(($(this).attr('class').split(' ').pop()));*/
-			    $(this).removeClass("btn-default").addClass("btn-warning disabled").attr("disabled",true).text("ROOM " + roomID);
+			    $(this).removeClass("btn-default").addClass("btn-warning disabled").attr("disabled",true).text("Room " + roomID);
 			    $(".roomBtn").attr("disabled", true);
 			    $("#roomNumber").attr("value",roomID);
 			    $("#roomPrice").attr("value", room_price);

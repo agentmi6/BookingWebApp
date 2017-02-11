@@ -99,3 +99,7 @@ body {
 	margin-top:20px;
 }
 
+.userInput {
+	display: none;
+}
+
