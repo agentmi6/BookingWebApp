@@ -15,7 +15,7 @@ VALUES ('ADMIN');
 
 ##########################################
 # to create ADMIN account:
-### go back to eclipse, create new account
+### go back to your browser, create new account
 ### go back in workbench, open new SQL script file and execute
 
 UPDATE websystique.app_user_user_profile
