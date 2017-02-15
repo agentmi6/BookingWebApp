@@ -109,7 +109,7 @@ public class BookingDaoImpl implements BookingDao {
 				+ "set r.room_available = true "
 				+ "where b.check_out_date < NOW()";
 		
-		Query query = session.createSQLQuery(hql);
+		Query query = session.createNativeQuery(hql);
 
 		query.executeUpdate();
 	}
