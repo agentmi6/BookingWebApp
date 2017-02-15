@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
@@ -61,8 +62,12 @@
 					<c:forEach var="booking" items="${bookings}">
 						<tr>
 							<td>${booking.user.username}</td>
-							<td>${booking.checkInDate}</td>
-							<td>${booking.checkOutDate}</td>
+							<td>
+								<fmt:formatDate type="date" pattern="dd-MMM-yyyy" value="${booking.checkInDate}" />
+							</td>							
+							<td>
+								<fmt:formatDate type="date" pattern="dd-MMM-yyyy" value="${booking.checkOutDate}" />								
+							</td>
 							<td>${booking.room.roomType.roomTypeName}</td>
 							<td>${booking.room.roomId}</td>
 							<td>${booking.room.roomType.roomTypePrice}</td>
@@ -71,7 +76,7 @@
 									<c:param name="bookingId" value="${booking.bookingId}" />
 								</c:url>
 																
-								<a class="actionLinks" href="${delete}"	onclick="if (!(confirm('Are you sure you want to delete this product?'))) return false">
+								<a class="actionLinks" href="${delete}"	onclick="if (!(confirm('Are you sure you want to delete this booking?'))) return false">
 									<span class="glyphicon glyphicon-trash"></span>
 								</a>
 							</td>
@@ -81,7 +86,7 @@
 			</table>
 		</c:when>
 		<c:otherwise>
-			<div class="noBookings well">
+			<div class="noItems well">
 				<h2 class="text-center">You have no bookings at the moment...</h2>
 				<a href="${pageContext.request.contextPath}/booking/addBooking" class="btn btn-primary addBtn" >Book now?</a>					
 			</div>
@@ -90,7 +95,6 @@
 	
 </div>
 </div>
-
 
 	<jsp:include page="footer.jsp" />
 

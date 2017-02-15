@@ -64,4 +64,16 @@ public class BookingServiceImpl implements BookingService {
 		return bookingDao.getBookingsForUserId(userId);
 	}
 
+	@Override
+	@Transactional
+	public void checkBookingDate() {
+		bookingDao.checkBookingDate();
+	}
+
+	@Override
+	@Transactional
+	public void deleteExpiredBookings() {
+		bookingDao.deleteExpiredBookings();
+	}
+
 }

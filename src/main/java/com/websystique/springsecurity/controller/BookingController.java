@@ -59,6 +59,9 @@ public class BookingController {
 	@GetMapping("/addBooking")
 	public String addBooking(Model model) {
 
+		bookingService.checkBookingDate();
+		bookingService.deleteExpiredBookings();
+
 		List<Booking> bookings = bookingService.getAllBookings();
 		List<Room> rooms = roomService.getAllRooms();
 		List<RoomType> roomTypes = roomTypeService.getRoomTypes();
@@ -73,10 +76,16 @@ public class BookingController {
 	}
 
 	@PostMapping("/saveBooking")
-	public String saveBooking(@ModelAttribute("booking") @Valid Booking booking,
-			@RequestParam("room.roomId") int roomId, BindingResult result) {
+	public String saveBooking(@ModelAttribute("booking") @Valid Booking booking, BindingResult result,
+			@RequestParam("room.roomId") int roomId, Model model) {
+
+		List<Room> rooms = roomService.getAllRooms();
+		List<RoomType> roomTypes = roomTypeService.getRoomTypes();
 
 		if (result.hasErrors()) {
+			model.addAttribute("currentUserId", getCurrentUserId());
+			model.addAttribute("rooms", rooms);
+			model.addAttribute("roomTypes", roomTypes);
 			return "booking-form";
 		}
 

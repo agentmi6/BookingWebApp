@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome page</title>
 
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -36,39 +39,41 @@
 	<jsp:include page="header.jsp" />
 
 	<!--  content -->
-	<div class="container pageContent">
-		<div class="row">
-			<div class="jumbotron">
-				<div class="lead text-center">
-					<h3>Welcome to Booking WebApp</h3>
-				</div>
-				<br /> 
-				<c:choose>
-					<c:when test="${pageContext.request.userPrincipal.name == null}">
-						<span>You are not logged in</span>					
-					</c:when>
-					<c:otherwise>
-						<span>Logged in as: ${pageContext.request.userPrincipal.name}</span>					
-					</c:otherwise>
-				</c:choose>
-			</div>
-
+	<div class="container-fluid welcome">
+		<div class="container">
 			<div class="row">
-			<c:choose>
-				<c:when test="${pageContext.request.userPrincipal.name == null }">
-					<div class="col-md-4 wElements">
-						<h2>Accounts</h2>
-						<p>To book a room you must be logged in, or sign up for a new account if you don`t have one</p>
-						<p>
-							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary">Login</a>
-							or  
-							<a href="${pageContext.request.contextPath}/newUser">Register new account</a>
-						</p>
-					</div>				
-				</c:when>
-			</c:choose>
-
-				<div class="col-md-4 wElements">
+				<div class="jumbotron">
+					<div class="lead text-center">
+						<h2 class="welcomeLead">Welcome to Booking WebApp</h2>
+						<div class="lead">
+							<p>Web application for hotel room booking, manage your bookings, adding review</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	 	</div>
+	 </div>	
+	 
+	 <div class="container-fluid">
+	 	<div class="container">
+			<div class="row text-center">
+				<c:choose>
+					<c:when test="${pageContext.request.userPrincipal.name == null }">
+						<div class="col-md-4 wElements">
+							<i class="fa fa-user-plus fa-4x" aria-hidden="true"></i>						
+							<h2>Accounts</h2>
+							<p>To book a room you must be logged in, or sign up for a new account if you don`t have one</p>
+							<p>
+								<a href="${pageContext.request.contextPath}/login" class="btn btn-primary">Login</a>
+								or  
+								<a href="${pageContext.request.contextPath}/newUser">Register new account</a>
+							</p>
+						</div>				
+					</c:when>
+				</c:choose>
+	
+				<div class="col-md-3 wElements">
+					<i class="fa fa-bed fa-4x" aria-hidden="true"></i>					
 					<h2>Booking</h2>
 					<p>Check our room layout and book a room</p>
 					<p>
@@ -76,7 +81,8 @@
 					</p>
 				</div>
 
-				<div class="col-md-4 wElements">
+				<div class="col-md-3 wElements">
+					<i class="fa fa-user-circle-o fa-4x" aria-hidden="true"></i>				
 					<h2>Profile</h2>
 					<p>Here you can manage your bookings(delete)</p>
 					<p>
@@ -85,23 +91,25 @@
 				</div>
 				
 				<c:choose>
-				<c:when test="${pageContext.request.userPrincipal.name != null }">
-					<div class="col-md-4 wElements">
-						<h2>Feedback</h2>
-						<p>Did you like your stay with us or not? Give us a review below</p>
-						<p>
-							<a href="#" class="btn btn-primary">Review</a>							
-						</p>
-					</div>				
-				</c:when>
-			</c:choose>				
-			</div>	
-			
-				<sec:authorize access="hasRole('ADMIN')">
-					<h3><span class="bg-success">If you see this, then you are an ADMIN</span></h3>						
-				</sec:authorize>
-
+					<c:when test="${pageContext.request.userPrincipal.name != null }">
+						<div class="col-md-3 wElements">
+							<i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>						
+							<h2>Feedback</h2>
+							<p>Did you like your stay with us or not? Give us a review below</p>
+							<p>
+								<a href="${pageContext.request.contextPath}/r/addReview" class="btn btn-primary">Review</a>							
+							</p>
+						</div>				
+					</c:when>
+				</c:choose>				
+			</div>								
 		</div>
+		
+			<sec:authorize access="hasRole('ADMIN')">
+				<h3 style="margin-top:30px;">
+					<span class="bg-success">If you see this, then you are an ADMIN</span>
+				</h3>						
+			</sec:authorize>		
 	</div>
 
 	<jsp:include page="footer.jsp" />

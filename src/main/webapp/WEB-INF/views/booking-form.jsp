@@ -155,25 +155,28 @@
 				<form:form action="saveBooking" modelAttribute="booking" method="POST">
 									
 				
-				<div class='col-sm-6'>
-					<label for="dpd1">Check-in date</label> 
+					<div class='col-sm-6'>
+						<label for="dpd1">Check-in date</label> 
 						<div class="form-group">
 							<div class='input-group date'>
-								<form:input path="checkInDate" id="dpd1" type='text' class="form-control" /> <span
+								<form:input path="checkInDate" id="dpd1" type='text' class="form-control" />
+							 	<span
 									class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span>
 								</span>
 							</div>
+							<form:errors path="checkInDate" class="text-danger"></form:errors>							
 						</div>
 					</div>
 					
 					<div class='col-sm-6'>
-					<label for="dpd2">Check-out date</label> 
+						<label for="dpd2">Check-out date</label> 
 						<div class="form-group">
 							<div class='input-group date'>
 								<form:input path="checkOutDate" id="dpd2" type='text' class="form-control" /> <span
-									class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span>
+									class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span>																	
 								</span>
 							</div>
+							<form:errors path="checkOutDate" class="text-danger"></form:errors>														
 						</div>
 					</div>									
 									
@@ -222,7 +225,8 @@
 	 		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 	 		 
 	 		var checkin = $('#dpd1').datepicker({
-	 		  onRender: function(date) {
+	 		  	format: 'dd-mm-yyyy',
+	 			onRender: function(date) {
 	 		    return date.valueOf() < now.valueOf() ? 'disabled' : '';
 	 		  }
 	 		}).on('changeDate', function(ev) {
@@ -235,7 +239,8 @@
 	 		  $('#dpd2')[0].focus();
 	 		}).data('datepicker');
 	 		var checkout = $('#dpd2').datepicker({
-	 		  onRender: function(date) {
+	 			format: 'dd-mm-yyyy',
+	 			onRender: function(date) {
 	 		    return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
 	 		  }
 	 		}).on('changeDate', function(ev) {

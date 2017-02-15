@@ -21,4 +21,8 @@ public interface BookingDao {
 	public void freeRoom(int roomId);
 
 	public List<Booking> getBookingsForUserId(int userId);
+
+	public void checkBookingDate();
+
+	public void deleteExpiredBookings();
 }

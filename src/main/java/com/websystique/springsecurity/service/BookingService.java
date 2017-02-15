@@ -22,4 +22,7 @@ public interface BookingService {
 
 	public List<Booking> getBookingsForUserId(int userId);
 
+	public void checkBookingDate();
+
+	public void deleteExpiredBookings();
 }

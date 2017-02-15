@@ -99,4 +99,28 @@ public class BookingDaoImpl implements BookingDao {
 		return bookings;
 	}
 
+	@Override
+	public void checkBookingDate() {
+		Session session = sessionFactory.getCurrentSession();
+
+		String hql = "update Room as r "
+				+ "inner join Booking as b "
+				+ "on r.room_id = b.room_room_id "
+				+ "set r.room_available = true "
+				+ "where b.check_out_date < NOW()";
+		
+		Query query = session.createSQLQuery(hql);
+
+		query.executeUpdate();
+	}
+
+	@Override
+	public void deleteExpiredBookings() {
+		Session session = sessionFactory.getCurrentSession();
+
+		Query query = session.createQuery("delete from Booking where check_out_date < NOW()");
+
+		query.executeUpdate();
+	}
+
 }
