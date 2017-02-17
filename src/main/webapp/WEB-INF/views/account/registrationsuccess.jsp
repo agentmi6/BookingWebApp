@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Review</title>
+    <title>User Registration Form</title>
     
     
     <link rel="stylesheet"
@@ -26,8 +26,7 @@
     <!-- color code #225849 -->
 </head>
 <body>
-
-<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+	<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -35,14 +34,14 @@
 				</div>
 				<div class="modal-body">
 					<h1 class="text-center" style="margin-top: 0px; margin-bottom: 0px; color: #eee9e9; font-weight: 900;">
-						REVIEW ADDED!
+						REGISTRATION SUCCESSFUL
 					</h1>
 				</div>
 				<div class="modal-footer m-footer">
 					<p style="text-align: left; display: inline-block;">
-						<span>${currentUser.firstName}, Thank you for your feedback</span> 
+						<span>${user}, </span>You can <a href="${pageContext.request.contextPath}/login">log in</a> now
 					</p>
-					<a href="${pageContext.request.contextPath}/review/reviews"
+					<a href="${pageContext.request.contextPath}/"
 						class="btn btn-default pull-right" style="text-align: right;">Close</a>
 				</div>
 			</div>
@@ -54,6 +53,6 @@
        $(document).ready(function(){    	     		
          	$('#myModal').modal('show');    	
        });
-	</script>
+</script>
 </body>
 </html>

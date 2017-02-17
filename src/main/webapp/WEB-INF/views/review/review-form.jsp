@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome page</title>
+<title>Review</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -33,7 +33,7 @@
 <body>	
 
 
-<jsp:include page="../header.jsp"></jsp:include>
+<jsp:include page="../fragments/header.jsp"></jsp:include>
 
 	<div class="container pageContent">
 		<div class="row">
@@ -88,33 +88,16 @@
 						<h2 style="margin-bottom:30px;" class="text-center">Thanks for adding your review.</h2>
 						
 						<h4>Check other reviews below</h4>						
-						<a href="${pageContext.request.contextPath}/r/reviews" class="btn btn-primary addBtn">Reviews</a>
+						<a href="${pageContext.request.contextPath}/review/reviews" class="btn btn-primary addBtn">Reviews</a>
 					</div>
 				</c:otherwise>		
-			</c:choose>
-			
-			
-			
-			
+			</c:choose>										
 		</div>
 	</div>
 
-<jsp:include page="../footer.jsp"></jsp:include>
+<jsp:include page="../fragments/footer.jsp"></jsp:include>
 
-<script type="text/javascript">
-	$(function(){
-		var $InputTextArea = $("#reviewContent");
-		var $charNum = $(".charNum");
-		var $stringLengthMax = $InputTextArea.attr("maxlength");
-		
-		$InputTextArea.keyup(function(){
-			var $string_length = $InputTextArea.val().length;
-			var $chars_left = $stringLengthMax - $string_length;
-			
-			$charNum.html($chars_left);
-		}).keyup();
-	});
-</script>
+<script type="text/javascript" src="<c:url value='/static/js/reviewJS.js'/>"></script>
 
 </body>
 </html>

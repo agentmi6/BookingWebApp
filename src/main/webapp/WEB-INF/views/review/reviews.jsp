@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<jsp:include page="../header.jsp"></jsp:include>
+<jsp:include page="../fragments/header.jsp"></jsp:include>
 
 	<div class="container pageContent">
 		<div class="row">
@@ -77,7 +77,7 @@
 		</div>	
 	</div>
 
-<jsp:include page="../footer.jsp"></jsp:include>
+<jsp:include page="../fragments/footer.jsp"></jsp:include>
 
 
 </body>
