@@ -35,7 +35,7 @@ public class RoomController {
 		List<Room> rooms = roomService.getAllRooms();
 		model.addAttribute("rooms", rooms);
 
-		return "room-list";
+		return "room/room-list";
 	}
 
 	@GetMapping("/addRoom")
@@ -46,14 +46,14 @@ public class RoomController {
 		model.addAttribute("room", new Room());
 		model.addAttribute("roomTypes", roomTypes);
 
-		return "room-form";
+		return "room/room-form";
 	}
 
 	@PostMapping("/saveRoom")
 	public String saveRoom(@ModelAttribute("room") @Valid Room room, BindingResult result) {
 
 		if (result.hasErrors()) {
-			return "room-form";
+			return "room/room-form";
 		}
 
 		roomService.saveRoom(room);
@@ -70,7 +70,7 @@ public class RoomController {
 		model.addAttribute("room", room);
 		model.addAttribute("roomTypes", roomTypes);
 
-		return "room-form";
+		return "room/room-form";
 	}
 
 	@GetMapping("/delete")

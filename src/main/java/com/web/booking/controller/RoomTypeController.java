@@ -33,7 +33,7 @@ public class RoomTypeController {
 
 		model.addAttribute("roomTypes", roomTypes);
 
-		return "roomType-list";
+		return "roomType/roomType-list";
 	}
 
 	@GetMapping("/addRoomType")
@@ -41,14 +41,14 @@ public class RoomTypeController {
 
 		model.addAttribute("roomType", new RoomType());
 
-		return "roomType-form";
+		return "roomType/roomType-form";
 	}
 
 	@PostMapping("/saveRoomType")
 	public String saveRoomType(@ModelAttribute("roomType") @Valid RoomType roomType, BindingResult result) {
 
 		if (result.hasErrors()) {
-			return "roomType-form";
+			return "roomType/roomType-form";
 		}
 
 		roomTypeService.saveRoomType(roomType);
@@ -64,7 +64,7 @@ public class RoomTypeController {
 
 		model.addAttribute("roomType", roomType);
 
-		return "roomType-form";
+		return "roomType/roomType-form";
 	}
 
 	@GetMapping("/delete")
