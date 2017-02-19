@@ -40,13 +40,10 @@
 		
 			<div class="pageHeader">
 				<h3>Add Review and rating</h3>
-			</div>
-			
-			
+			</div>					
 			
 			<c:choose>
-				<c:when test="${empty reviews}">
-				
+				<c:when test="${empty reviews}">				
 					<div class="col-md-10 well">
 						<form:form action="saveReview" modelAttribute="review" method="POST">
 						
@@ -79,10 +76,8 @@
 								<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save</button>
 							</div>
 						</form:form>
-					</div>
-		
-				</c:when>	
-				
+					</div>		
+				</c:when>					
 				<c:otherwise>
 					<div class="noItems well">
 						<h2 style="margin-bottom:30px;" class="text-center">Thanks for adding your review.</h2>
